@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06</title>
+    <style>
+        body {background-color:rgb(0, 0, 0); color: white; font: normal 15pt Arial; h1 {color: yellow;}} /* Comentáio em CSS */
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1> <!-- Isso é um comentário em html -->
+    <p>Teste</p>
+    <script>
+        var num1 = window.prompt('Digite um Número') // String
+        var num2 = window.prompt('Digite Outro Número') // String
+        var soma = Number(num1) + Number.parseInt(num2) // também tem como converter já no window.prompt, tem outra forma de converter de forma mais simples: Number(n)
+        window.alert(`A Soma entre ${num1} e ${num2} é igual a ${soma}`)
+        // (number + number) para adição
+        // (string + string) para concatenação
+        // para converter numero pra string usa os comandos:
+        // String(n) ou n.toString()
+    </script>
+</body>
+</html>

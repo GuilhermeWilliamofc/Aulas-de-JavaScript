@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10</title>
+    <style>
+        div#area {
+            background: palevioletred; 
+            color:indigo; 
+            font: normal 20pt Arial;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;}
+    </style> <!-- a teoria é sobre eventos DOM -->
+</head>
+<body>
+    <div id = 'area'> <!--onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" os eventos podem ser declarados aqui, mas fica poluido-->
+        Interaja...
+    </div>
+
+    <script>
+        var div_area = document.getElementById('area') // variavel global (não recomendado)
+        div_area.addEventListener('click', clicar) // outra forma de declarar as funções
+        div_area.addEventListener('mouseenter', entrar)
+        div_area.addEventListener('mouseout', sair)
+
+        function clicar(){
+            div_area.innerText = 'Clicou : D' // muda o texto
+            div_area.style.backgroundColor = 'black' // muda a cor do fundo
+            div_area.style.color = 'yellow' // muda a cor do texto
+        } // função em javascript
+
+        function entrar(){
+            div_area.innerText = 'Mouse Entrou!'
+            div_area.style.backgroundColor = 'rgb(149, 0, 255)' // roxo
+            div_area.style.color = 'rgb(255, 170, 42)' // laranja
+        }
+
+        function sair(){
+            div_area.innerText = 'Mouse Saiu :('
+            div_area.style.backgroundColor = 'red'
+            div_area.style.color = 'yellow'
+        }
+    </script>
+</body>
+</html>

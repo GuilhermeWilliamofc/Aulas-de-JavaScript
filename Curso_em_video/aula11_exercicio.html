@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11 - Nacionalidade</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+
+        h1{
+            font: normal 30px Arial;
+            background-color: darkslategrey;
+            color:gold;
+            padding: 4px 10px;
+        }
+
+        p{
+            font:normal 15px Arial;
+            margin-top: -15px;
+            color: goldenrod;
+            background-color: darkslategrey;
+            padding: 4px 10px;
+        }
+
+        #texto_nacionalidade{
+            color: gold;
+            background-color: darkslategrey;
+            padding: 4px 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    <p>Por Guilherme William</p>
+    <label id="texto_nacionalidade">Sua Nacionalidade:</label>
+    <input type="text" name="nacionalidade" id="nacionalidade">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="status_pais"></div>
+
+    <script>
+        document.getElementById('nacionalidade').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                verificar();
+            }
+        });
+
+        function verificar(){
+            var nacionalidade = document.getElementById('nacionalidade')
+            var status_pais = document.getElementById('status_pais')
+
+            status_pais.style.color = 'gold'
+            status_pais.style.backgroundColor = 'darkslategrey'
+            status_pais.style.marginTop = '7px'
+            status_pais.style.padding = '4px 10px'
+
+            if (nacionalidade.value == 'Brasil'){                
+                status_pais.innerHTML = 'Você é <strong>Brasileiro</strong>'
+            }
+            else{
+                status_pais.innerHTML = 'Você é <strong>Estrangeiro</strong>'
+            }
+        }
+    </script>
+</body>
+</html>

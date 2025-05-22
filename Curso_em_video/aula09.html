@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 09</title>
+    <style>body{background-color: black; 
+    color: white; 
+    font: normal 14pt Arial;}
+    h1{color: yellow;}
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
+    <div id = 'tag_clique' name = 'mensagem' class = 'textos'>Clique em mim</div>
+    <script>
+        var corpo = window.document.body // o var não é muito recomendado para esse tipo de script
+        var paragrafo_1 = window.document.getElementsByTagName('p')[0] // pega o elemento pela tag dele
+        var paragrafo_2 = window.document.getElementsByTagName('p')[1]
+        var elemento_por_id1 = window.document.getElementById('tag_clique') // pega o elemento pelo id declarado quando foi criado
+        // var elemento_por_nome = window.document.getElementsByName('mensagem')[0] // pega o elemento pelo nome declarado quando o elemento foi criado
+        // var elemento_por_classe = window.document.getElementsByClassName('textos') // pega o elemento pela classe declarada quando o elemento foi criado
+        // var elemento_por_queryselector = window.document.querySelector('div#msg') // dentro dos parenteses usas a sintaxe do css, quando vai procurar por id usa "#" e quando usa por classe é "."
+
+        elemento_por_id1.style.color = 'rgb(21, 255, 0)' // tem como mudar o background do texto se quiser
+        elemento_por_id1.innerText = 'Estou Aguardando...' // tem como mudar o texto do elemento
+
+        paragrafo_1.style.color = 'rgb(0, 255, 255)' // ou 'blue', muda o paragrafo escolhido na variavel para ciano
+        corpo.style.background = 'purple' // muda o fundo do site de preto para roxo
+        
+        // window.document.write(`Está escrito: ${paragrafo_1.innerText}`) // a teoria é sobre Document Object Model
+        // window.alert(paragrafo_2.innerHTML) // diferente do innerText o innerHTML deixa o texto com a msm formatação do paragrafo original
+
+    </script>
+</body>
+</html>

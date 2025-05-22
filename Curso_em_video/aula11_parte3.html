@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11 - DETRAN</title>
+    <style>
+        body{
+            font: normal 17px Arial;
+            background-color: rgb(253, 253, 90);
+        }
+
+        p{
+            background-color: black;
+            color: yellow;
+            margin-top: -21px;
+            padding: 4px 10px;
+        }
+
+        input#velocidade{
+            background: black;
+            color: white;
+            padding: 4px 10px;
+        }
+
+        #velocidadetexto {
+            background-color: black;
+            color: white;
+            margin-right: -5px;
+            padding: 4px 10px;
+        }
+
+        #kilometros{
+            background-color: black;
+            color: white;
+            margin-left: -5px;
+            padding: 4px 10px;
+        }
+
+        input#verificação{
+            background-color: black;
+            color: yellow;
+            padding: 4px 10px;
+        }
+
+        #dados_vel{
+            color: yellow;
+            width: 350px;
+            margin-top: 2px;
+            padding: 4px 10px;
+        }
+
+        #status_vel{
+            height: 20px;
+            margin-top: 3px;
+            padding: 4px 10px;
+        }
+
+        h1{
+            background-color: black;
+            color: yellow;
+            padding: 4px 10px;
+        }
+
+        #fundo_preto{
+            background-color: black;
+            width: 1000px;
+            height: 100px;
+            margin-top: -78px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas - DETRAN</h1>
+    <p>Por Guilherme William</p>
+    <label id="velocidadetexto">Velocidade do carro:</label> 
+    <input type="number" name="velocidade" id="velocidade"> 
+    <label id="kilometros">Km/h</label>
+    <input type="button" value="Verificar" id="verificação" onclick="calcular()">
+    <div id="dados_vel"></div>
+    <div id="status_vel"></div>
+    <p id="fundo_preto"></p>
+
+    <script>
+        document.getElementById('velocidade').addEventListener('keydown', function(event) { // um event listener se o enter for pressionado, esse trecho não faz parte da aula
+            if (event.key === 'Enter') {
+                calcular();
+            }
+        });
+
+        function calcular(){
+            var velocidade = document.getElementById('velocidade')
+            var velocidade = Number(velocidade.value) // não esquecer o .value se não ele não pega o valor digitado
+            var dados = document.getElementById('dados_vel')
+            var status = document.getElementById('status_vel')
+            var fundo = document.getElementById('fundo_preto')
+
+            dados.style.backgroundColor = 'black'
+            dados.innerHTML = `Sua Velocidade atual é de: <strong>${velocidade}Km/h</strong>`
+
+            if(velocidade > 60){
+            status.style.backgroundColor = 'black'
+            status.style.color = 'red'
+            status.innerHTML = 'Velocidade Ultrapassada!'
+            status.style.width = '195px'
+            fundo.style.marginTop = '-98px'
+            }
+            else{
+                status.style.backgroundColor = 'black'
+                status.style.color = 'green'
+                status.innerHTML = 'Velocidade Permitida'
+                status.style.width = '165px'
+                fundo.style.marginTop = '-98px'
+            }
+        }
+    </script>
+</body>
+</html>

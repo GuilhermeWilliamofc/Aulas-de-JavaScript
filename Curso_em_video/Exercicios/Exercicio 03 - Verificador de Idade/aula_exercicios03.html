@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03 - Verificador de Idade</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+
+    <section>
+        <div>
+            <p>Ano de Nascimento:
+            <input type="number" name="ano_nascimento" id="ano_nascimento" min="0" max="3000"> <!--Coloquei um limite minimo e maximo do ano de nascimento -->
+            </p> <!--Coloquei esse p aqui para ficar tudo na mesma linha-->
+
+            <p>
+                Sexo:
+                <input type="radio" name="sexo" id="sexomasc" checked> <!-- Esse radio é para ter aquela bolinha para marcar, e o checked para deixar já marcado como padrão, aí a pessoa não deixa a opção desmarcada-->
+                <label for="sexomasc">Masculino</label> <!--Label para aparecer do lado da primeira bolinha-->
+                <input type="radio" name="sexo" id="sexofem"> <!-- O name NÃO pode ser diferente entre as opções, senão quando marcar uma opção a outra não será desmarcada-->
+                <label for="sexofem">Feminino</label>
+            </p>
+
+            <p>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </p>
+        </div>
+
+        <div id="resposta">
+            Preencha os dados acima para ver o resultado!
+        </div>
+        <div id="resposta2">
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Guilherme William</p>
+    </footer>
+    <script src="aula_exercicios03.js"></script>
+</body>
+</html>

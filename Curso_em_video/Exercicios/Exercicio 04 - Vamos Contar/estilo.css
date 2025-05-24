@@ -1,11 +1,11 @@
 body{
-    background-color: blueviolet;
+    background-color: rgb(255, 94, 94);
     font: normal 13pt Arial;
 }
 
 header{
     h1{
-        color: chartreuse;
+        color: yellow;
         text-align: center;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.027);
     }

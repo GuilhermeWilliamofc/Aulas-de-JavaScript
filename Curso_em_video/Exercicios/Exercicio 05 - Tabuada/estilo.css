@@ -1,11 +1,11 @@
 body{
-    background-color: blueviolet;
+    background-color: rgb(188, 252, 246);
     font: normal 13pt Arial;
 }
 
 header{
     h1{
-        color: chartreuse;
+        color: rgb(27, 26, 26);
         text-align: center;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.027);
     }
@@ -22,7 +22,7 @@ section{
 
 footer{
     p{
-        color: whitesmoke;
+        color: rgb(43, 42, 42);
         text-align: center;
         font-style: italic;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.034);

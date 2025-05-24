@@ -35,20 +35,20 @@ function contar(){
     if (inicioinput.value.length == 0 || fiminput.value.length == 0 || passoinput.value.length == 0){
         texto.innerHTML = 'Erro, Impossível Contar!<br>Por favor, Digite valores válidos!'
         texto.style.color = 'red'
-        return; // vai ignorar o resto do script
+        return; // vai ignorar o resto do script, ou eu poderia ter colocado todo o resto do script dentro de um else...
     }
 
     if (passoinput.value != 0){ // se o passo não for zero
         passo = Number(passoinput.value)
     }
 
-    if (passoinput.value == 0){ // se o passo for zero
-        aviso = '<span style="color: orange;">Passo Inválido! Considerando Passo 1<br></span>' // span para mudar a cor quando for copiada
+    if (passoinput.value <= 0){ // se o passo for zero
+        aviso = '<span style="color: orange;">Passo Inválido! Considerando Passo 1<br></span>' // span para mudar a cor quando for copiada, br significa break row
         passo = 1
     }
 
     // "filtrando" os valores
-    if(inicioinput.value < fiminput.value || inicioinput.value.length != 0 && fiminput.value.length != 0 && passoinput.value.length != 0){
+    if(Number(inicioinput.value) < Number(fiminput.value)){
     inicio = Number(inicioinput.value) // acho q nem precisa desse Number mas é só pra garantir
     fim = Number(fiminput.value)
 
@@ -59,10 +59,17 @@ function contar(){
         texto.innerHTML += `${inicio} \u{1F449} `
         texto.style.color = 'black'
     }
-    texto.innerHTML += '\u{1F3C1}'
 }
-    else if (inicio.value > fim.value){
-        texto.innerHTML = 'Erro! O Início é maior que o Fim'
-        texto.style.color = 'red'
+    else{
+        inicio = Number(inicioinput.value)
+        fim = Number(fiminput.value)
+
+        texto.innerHTML = aviso + `Contando de ${inicio} a ${fim} de ${passo} em ${passo}...<br>`
+
+    for (inicio; inicio >= fim; inicio -= passo){
+        texto.innerHTML += `${inicio} \u{1F449} `
+        texto.style.color = 'black'
     }
+    }
+    texto.innerHTML += '\u{1F3C1}'
 }
